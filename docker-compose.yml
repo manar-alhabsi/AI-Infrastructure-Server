@@ -21,6 +21,14 @@ services:
       - "host.docker.internal:host-gateway"
     restart: unless-stopped
 
+  ai-backend:
+    build:
+      context: ./backend
+    container_name: ai-backend
+    ports:
+      - "8001:8000"
+    restart: unless-stopped
+
 volumes:
   ollama_data:
   open-webui:
